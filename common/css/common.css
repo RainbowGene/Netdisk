@@ -1,0 +1,48 @@
+/* 本项目公共样式 */
+.page{
+	background-color: #F4F4F4;
+	height: 100%;
+}
+.bg-light{
+	background-color: #F5F5F4!important;
+}
+.bg-main{
+	background-color: #009CFF!important;
+}
+.bg-main-hover{
+	background-color: #36B1FE!important;
+}
+.bg-main-disabled{
+	background-color: #36B1FE!important;
+}
+/* .bg-input{
+	background-color: #F2F2F2!important;
+}
+
+.text-placeholder{
+	color: #999999!important;
+} */
+.text-main{
+	color: #009CFF!important;
+}
+.text-main-hover{
+	color: #36B1FE!important;
+}
+.border-main{
+	border-color: #009CFF!important;
+}
+.line-h{
+	line-height: 1.2!important;
+}
+.f-divider{
+	height: 20rpx;background-color: #F5F5F4;
+}
+.border-light-secondary{
+	border-color: #f4f4f4!important;
+}
+.bg-success{
+	background-color: #00D28B!important;
+}
+.bg-warning{
+	background-color: #FB7D30!important;
+}
