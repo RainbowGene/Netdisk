@@ -1,6 +1,13 @@
 {
 	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
 		{
+			"path": "pages/login/login",
+			"style": {
+				"app-plus": {
+					"titleNView": false
+				}
+			}
+		}, {
 			"path": "pages/index/index",
 			"style": {
 				"app-plus": {
@@ -11,7 +18,19 @@
 			"path": "pages/list/list",
 			"style": {
 				"navigationBarTitleText": "传输列表",
-				"enablePullDownRefresh": false
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					"titleNView": {
+						"buttons": [{
+							"color": "#333333",
+							"colorPressed": "#009CFF",
+							"float": "right",
+							"fontSize": "22px",
+							"fontSrc": "/static/icon.ttf",
+							"text": "\ue64a"
+						}]
+					}
+				}
 			}
 		}, {
 			"path": "pages/my/my",
@@ -19,8 +38,25 @@
 				"navigationBarTitleText": "个人中心",
 				"enablePullDownRefresh": false
 			}
+		}, {
+			"path": "pages/video/video",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+
 		}
-	],
+
+	    ,{
+            "path" : "pages/setting/setting",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "setting",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+    ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "微盘",

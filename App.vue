@@ -2,6 +2,8 @@
 	export default {
 		onLaunch: function() {
 			console.log('App Launch')
+
+			this.$store.dispatch('initUser') // 初始化用户信息
 		},
 		onShow: function() {
 			console.log('App Show')

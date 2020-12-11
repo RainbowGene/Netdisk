@@ -1,15 +1,22 @@
 <template>
 	<!-- 列表项 -->
-	<view class="p-3 flex align-center border-bottom border-light-secondary">
-		<text class="iconfont" :class="iconClass" style="font-size:60rpx;"></text>
-		<view class="flex flex-column ml-3" style="line-height: 1.2;">
-			<text class="font-md mb-1">{{item.name}}</text>
-			<text class="font-sm text-muted">{{item.create_time}}</text>
+	<view>
+		<view class="px-3 py-2 flex align-center border-bottom border-light-secondary" hover-class="bg-light" @click="$emit('click')">
+			<text class="iconfont" :class="iconClass" style="font-size:60rpx;"></text>
+			<view class="flex flex-column ml-3" style="line-height: 1.2;max-width: 500rpx;">
+				<text class="font-md mb-1 text-ellipsis">{{item.name}}</text>
+				<text class="font-sm text-muted">{{item.created_time}}</text>
+			</view>
+			<view v-if="showRight" class="ml-auto">
+				<slot>
+					<view class="flex align-center justify-center" style="width: 70rpx;height: 70rpx;" @click.stop="select">
+						<text v-if="!item.checked" class="rounded-circle border" style="width: 25rpx;height: 25rpx;"></text>
+						<text v-else class="iconfont icon-xuanze-yixuan text-primary" style="font-size: 35rpx;"></text>
+					</view>
+				</slot>
+			</view>
 		</view>
-		<view class="ml-auto flex align-center justify-center" style="width: 70rpx;height: 70rpx;" @click.stop="select">
-			<text v-if="!item.checked" class="rounded-circle border" style="width: 25rpx;height: 25rpx;"></text>
-			<text v-else class="iconfont icon-xuanze-yixuan text-primary" style="font-size: 35rpx;"></text>
-		</view>
+		<slot name="bottom"></slot>
 	</view>
 </template>
 
@@ -39,7 +46,11 @@
 	export default {
 		props: {
 			item: Object,
-			index: [Number, String]
+			index: [Number, String],
+			showRight: {
+				type: Boolean,
+				default: true
+			}
 		},
 		computed: {
 			iconClass() {
